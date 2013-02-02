@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">	
+  	<!--
+  	<Set name="contextPath">/MyTestApp</Set>
+  	<Set name="war">  	
+  	 <SystemProperty name="jetty.home" default="."/>/webapps/MyTestApp
+  	</Set>
+  	
+  	
+	 
+	<Get name="securityHandler">
+    <Set name="loginService">
+      <New class="org.eclipse.jetty.security.HashLoginService">
+            <Set name="name">CBILDAP</Set>
+            <Set name="config"><SystemProperty name="jetty.home" default="."/>/etc/realms.properties</Set>
+      </New>
+    </Set>
+  </Get>
+   -->
+ <!--
+     
+  <Set name="securityHandler">
+    <New class="org.eclipse.jetty.security.ConstraintSecurityHandler">
+     <Set name="loginService">
+       <New class="org.eclipse.jetty.plus.jaas.JAASLoginService">
+         <Set name="name">karaf</Set>
+         <Set name="loginModuleName">karaf</Set>
+       </New>
+     </Set>
+    </New>
+  </Set>
+
+   -->
+   <!-- 
+ <Set name="securityHandler"> 
+ 	<New class="org.eclipse.jetty.security.ConstraintSecurityHandler">    
+    <Set name="loginService"> 
+      <New class="org.eclipse.jetty.plus.jaas.JAASLoginService"> 
+            <Set name="name">CBILDAP</Set>                        
+            <Set name="LoginModuleName">CBILDAP</Set>        
+          Enable this only when app is running in Karaf  
+            <Set name="RoleClassNames">
+			    <Array type="java.lang.String">
+			      <Item>org.apache.karaf.jaas.boot.principal.UserPrincipal</Item>
+			      <Item>org.apache.karaf.jaas.boot.principal.RolePrincipal</Item>
+			    </Array>
+			</Set>			 
+			 
+      </New> 
+    </Set> 
+    </New>
+ </Set>
+ -->
+
+<Get name="securityHandler"> 	
+		<Set name="realmName">CBILDAP</Set>
+</Get>
+
+</Configure>	

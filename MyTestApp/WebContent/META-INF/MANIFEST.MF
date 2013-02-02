@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1359305471779
+Tool: Bnd-0.0.357
+Webapp-Context: MyTestApp
+Web-Context: MyTestApp
+Web-ContextPath: /MyTestApp
+Created-By: 1.6.0_30 (Sun Microsystems Inc.)
+Bundle-Name: mytestapp
+Bundle-SymbolicName: mytestapp
+Bundle-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-ClassPath: WEB-INF/classes
+Import-Package: javax.servlet,javax.servlet.annotation,javax.servlet.http,org.apache.commons.logging,org.apache.commons.logging.impl,org.apache.log4j,org.apache.log4j.spi,org.apache.log4j.xml,org.slf4j,org.slf4j.helpers,org.slf4j.spi,org.eclipse.jetty.*,org.eclipse.jetty.plus.jaas.*, org.eclipse.jetty.security.*,org.eclipse.jetty.security.authentication.*,org.apache.karaf.jaas.boot.principal.*

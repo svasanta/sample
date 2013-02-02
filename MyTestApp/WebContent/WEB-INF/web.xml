@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>MyTestApp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+   <servlet>
+   		<servlet-name>auth</servlet-name>
+   		<servlet-class>com.san.auth.AuthServlet</servlet-class>
+   </servlet>
+   <servlet>
+   		<servlet-name>test</servlet-name>
+   		<servlet-class>com.san.test.TestServlet</servlet-class>
+   </servlet> 
+   <servlet-mapping>
+   	<servlet-name>auth</servlet-name>
+   	<url-pattern>/logout</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>test</servlet-name>
+   	<url-pattern>/testservlet</url-pattern>
+   </servlet-mapping>
+   
+   
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Secure Content</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>FORM</auth-method>
+   	<realm-name>CBILDAP</realm-name>
+    <form-login-config>
+      <form-login-page>/login.html</form-login-page>
+      <form-error-page>/login.html?retry</form-error-page>
+    </form-login-config>
+  </login-config>
+  <security-role>
+    <description>The role required to access restricted content </description>
+    <role-name>admin</role-name>   
+  </security-role>
+   
+</web-app>
