@@ -1,0 +1,5 @@
+MyTestApp - Is the eclipse sample project using JAAS.
+jetty.xml - Jetty configuration file from <karaf.home>/etc/jetty.xml
+myrealm.xml - Bluprint xml, Deployed to <karaf.home>/deploy folder
+
+
